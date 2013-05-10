@@ -1,0 +1,43 @@
+ENVFILE(1)           BSD General Commands Manual            ENVFILE(1)
+
+NAME
+     envfile - execute a command under a crafted environment
+
+SYNOPSIS
+     envfile foo.env -- program [argv...]
+
+DESCRIPTION
+     The envfile(1)  is a  program to  run another  program; much
+     like  sudo(1) or  chroot(1).   The difference  is that  this
+     program is  designed to modify environment  variables before
+     that.
+
+FILES
+     The  `envfile(1)` program  takes an  env file  as its  first
+     argument.  They can either be one of
+
+      * Perl program when their suffixes are '.pl' or '.perl';
+      * JSON file when their suffixes are '.js' or '.json';
+      * YAML file when their suffixes are '.yml' or '.yaml';
+      * Otherwise envfile  formatted, where KEY=VALUE is written
+        each line.
+  
+EXAMPLES
+        $ cat > foo.env
+        FOO=foo
+        BAR=bar
+        ^D
+        $ envfile foo.env ruby -e 'puts ENV["FOO"], ENV["BAR"]'
+        foo
+        bar
+
+AUTHOR
+     This  is  a Ruby  translation  of  p5-App-envfile by  Urabe,
+     Shyouhei  <shyouhei@ruby-lang.org>.   Original Perl  version
+     was by xaicron <xaicron@cpan.org>.
+
+BUGS
+     You  need  a working  Perl  interpreter  to understand  Perl
+     program.
+
+ENVFILE(1)           BSD General Commands Manual            ENVFILE(1)
