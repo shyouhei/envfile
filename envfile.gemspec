@@ -24,7 +24,7 @@ require 'rubygems'
 
 Gem::Specification.new do |gem|
    gem.required_ruby_version = '>= 1.9.3'
-   gem.name                  = 'evnfile'
+   gem.name                  = 'envfile'
    gem.version               = '0.0.1'
    gem.author                = 'Urabe, Shyouhei'
    gem.homepage              = 'https://github.com/shyouhei/envfile'
