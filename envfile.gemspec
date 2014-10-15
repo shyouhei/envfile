@@ -48,7 +48,6 @@ Gem::Specification.new do |gem|
    gem.add_development_dependency 'rake'
    gem.add_development_dependency 'bundler'
 
-   gem.add_runtime_dependency 'pit'
    gem.add_runtime_dependency 'json'
    gem.add_runtime_dependency 'psych'
 end
